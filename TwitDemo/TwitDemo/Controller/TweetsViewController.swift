@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TweetsViewController.swift
 //  TwitDemo
 //
 //  Created by Inaldo Ramos Ribeiro on 03/08/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TweetsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

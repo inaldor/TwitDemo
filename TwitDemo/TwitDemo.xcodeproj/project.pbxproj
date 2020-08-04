@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		CD14F97524D8A44300F6689A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD14F97424D8A44300F6689A /* AppDelegate.swift */; };
 		CD14F97724D8A44300F6689A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD14F97624D8A44300F6689A /* SceneDelegate.swift */; };
-		CD14F97924D8A44300F6689A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD14F97824D8A44300F6689A /* ViewController.swift */; };
+		CD14F97924D8A44300F6689A /* TweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD14F97824D8A44300F6689A /* TweetsViewController.swift */; };
 		CD14F97C24D8A44300F6689A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD14F97A24D8A44300F6689A /* Main.storyboard */; };
 		CD14F97E24D8A44400F6689A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD14F97D24D8A44400F6689A /* Assets.xcassets */; };
 		CD14F98124D8A44400F6689A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD14F97F24D8A44400F6689A /* LaunchScreen.storyboard */; };
+		CD14F98B24D96F3B00F6689A /* TweetsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD14F98A24D96F3B00F6689A /* TweetsDetailsViewController.swift */; };
+		CD14F98D24D9743F00F6689A /* TweetsDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD14F98C24D9743F00F6689A /* TweetsDetailsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CD14F97124D8A44300F6689A /* TwitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD14F97424D8A44300F6689A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD14F97624D8A44300F6689A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CD14F97824D8A44300F6689A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CD14F97824D8A44300F6689A /* TweetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsViewController.swift; sourceTree = "<group>"; };
 		CD14F97B24D8A44300F6689A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD14F97D24D8A44400F6689A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD14F98024D8A44400F6689A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD14F98224D8A44400F6689A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD14F98A24D96F3B00F6689A /* TweetsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsDetailsViewController.swift; sourceTree = "<group>"; };
+		CD14F98C24D9743F00F6689A /* TweetsDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsDetailsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,41 @@
 		CD14F97324D8A44300F6689A /* TwitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CD14F99024D974CA00F6689A /* Model */,
+				CD14F98F24D974C800F6689A /* View */,
+				CD14F98E24D974C500F6689A /* Controller */,
 				CD14F97424D8A44300F6689A /* AppDelegate.swift */,
 				CD14F97624D8A44300F6689A /* SceneDelegate.swift */,
-				CD14F97824D8A44300F6689A /* ViewController.swift */,
 				CD14F97A24D8A44300F6689A /* Main.storyboard */,
 				CD14F97D24D8A44400F6689A /* Assets.xcassets */,
 				CD14F97F24D8A44400F6689A /* LaunchScreen.storyboard */,
 				CD14F98224D8A44400F6689A /* Info.plist */,
 			);
 			path = TwitDemo;
+			sourceTree = "<group>";
+		};
+		CD14F98E24D974C500F6689A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD14F97824D8A44300F6689A /* TweetsViewController.swift */,
+				CD14F98A24D96F3B00F6689A /* TweetsDetailsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CD14F98F24D974C800F6689A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD14F98C24D9743F00F6689A /* TweetsDetailsCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD14F99024D974CA00F6689A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +168,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD14F97924D8A44300F6689A /* ViewController.swift in Sources */,
+				CD14F98D24D9743F00F6689A /* TweetsDetailsCell.swift in Sources */,
+				CD14F97924D8A44300F6689A /* TweetsViewController.swift in Sources */,
 				CD14F97524D8A44300F6689A /* AppDelegate.swift in Sources */,
 				CD14F97724D8A44300F6689A /* SceneDelegate.swift in Sources */,
+				CD14F98B24D96F3B00F6689A /* TweetsDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
