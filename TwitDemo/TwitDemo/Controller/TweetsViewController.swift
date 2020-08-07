@@ -21,11 +21,25 @@ class TweetsViewController: UIViewController {
         super.viewDidLoad()
         
         activityIndicator.hidesWhenStopped = true
+
+        fetchUserId() { userID in
+            self.fetchTweets(accountID: userID)
+        }
+        
+//        fetchTweets()
+        // Do any additional setup after loading the view.
     }
+
 
     @IBAction func goButton(_ sender: UIButton) {
         
         activityIndicator.startAnimating()
+	}
+
+
+    
+    
+    private func fetchUserId(completion: @escaping ((_ userID: String) -> Void)) {
         
         self.userIdByNameService = UserIdByNameService(provider: UserIdByNameAPI.Provider())
         
@@ -33,6 +47,7 @@ class TweetsViewController: UIViewController {
         guard let accountName = nameField.text else { return }
         
         userIdByNameService.fetchUserId(accountName: accountName) { (response, error) in
+
             
             print(response)
             
@@ -47,6 +62,7 @@ class TweetsViewController: UIViewController {
                     self.performSegue(withIdentifier: "segueToTweetDetailsViewController", sender: accountUser)
                     
                     print("Success")
+                    completion(response.dataUser.id)
                     
                 } else {
                     print(error)
@@ -54,8 +70,13 @@ class TweetsViewController: UIViewController {
                 }
             }
         }
-        
-        
+
+    }
+
+    private func fetchTweets(accountID: String) {
+
+        self.tweetsService = TweetsService(provider: TweetsAPI.Provider())
+
     }
     
 //
@@ -91,7 +112,7 @@ class TweetsViewController: UIViewController {
            
            guard let tweetsService = tweetsService else { return }
            
-           tweetsService.updateTweets(accountID: "2244994945") { (response, error) in
+           tweetsService.updateTweets(accountID: accountID) { (response, error) in
                
                
                print(response)
@@ -120,7 +141,3 @@ class TweetsViewController: UIViewController {
         if segue.identifier == "segueToTweetDetailsViewController" {
             if let tweetDetailsViewController = segue.destination as? TweetsDetailsViewController, let id = sender {
                 tweetDetailsViewController.accountId = id as? String ?? ""
-            }
-        }
-    }
-}

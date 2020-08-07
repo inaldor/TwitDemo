@@ -24,8 +24,8 @@ extension TweetsAPI: TargetType {
 
     var path: String {
         switch self {
-        case .tweets(let accountId):
-            return "1.1/statuses/user_timeline.json?user_id=2244994945"
+        case .tweets:
+            return "1.1/statuses/user_timeline.json"
         }
     }
 
@@ -40,10 +40,11 @@ extension TweetsAPI: TargetType {
 
     var task: Task {
         switch self {
-        case .tweets:
-            return .requestPlain
+        case .tweets(let accountId):
+//            return .requestPlain
+            return .requestParameters(parameters: ["user_id": accountId], encoding: URLEncoding.queryString)
+//            return .requestParameters(parameters: ["first_name": "teste", "last_name": "teste"], encoding: URLEncoding.queryString)
         }
-
     }
 
     var sampleData: Data {
