@@ -17,21 +17,23 @@ class TweetsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchUserId()
+        fetchUserId() { userID in
+            self.fetchTweets(accountID: userID)
+        }
         
-        fetchTweets()
+//        fetchTweets()
         // Do any additional setup after loading the view.
     }
 
     
     
-    private func fetchUserId() {
+    private func fetchUserId(completion: @escaping ((_ userID: String) -> Void)) {
         
         self.userIdByNameService = UserIdByNameService(provider: UserIdByNameAPI.Provider())
         
         guard let userIdByNameService = userIdByNameService else { return }
         
-        userIdByNameService.fetchUserId(accountName: "TwitterDev") { (response, error) in
+        userIdByNameService.fetchUserId(accountName: "HUBBLE_space") { (response, error) in
             
             
             print(response)
@@ -41,6 +43,7 @@ class TweetsViewController: UIViewController {
                 if let response = response {
                     
                     print("Success")
+                    completion(response.dataUser.id)
                     
                 } else {
                     print(error)
@@ -50,13 +53,13 @@ class TweetsViewController: UIViewController {
         }
     }
 
-    private func fetchTweets() {
-        
+    private func fetchTweets(accountID: String) {
+
         self.tweetsService = TweetsService(provider: TweetsAPI.Provider())
         
         guard let tweetsService = tweetsService else { return }
         
-        tweetsService.updateTweets(accountID: "2244994945") { (response, error) in
+        tweetsService.updateTweets(accountID: accountID) { (response, error) in
             
             
             print(response)
@@ -69,6 +72,7 @@ class TweetsViewController: UIViewController {
                 if let response = response {
                     
                     print("Success")
+                    print(response)
                     
                 } else {
                     print(error)
