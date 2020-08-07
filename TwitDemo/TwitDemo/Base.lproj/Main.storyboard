@@ -21,7 +21,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="GO!"/>
                                 <connections>
-                                    <segue destination="P8s-ug-9oD" kind="show" id="4GT-7V-9NH"/>
+                                    <action selector="goButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fLt-Fa-ava"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WJO-vO-uiJ">
@@ -35,6 +35,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="mjU-8z-c3S">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -50,6 +54,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tweets" id="V5c-ln-gXt"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="mjU-8z-c3S" id="crM-BO-B4J"/>
+                        <outlet property="nameField" destination="WJO-vO-uiJ" id="hl2-Jj-isn"/>
+                        <segue destination="P8s-ug-9oD" kind="show" identifier="segueToTweetDetailsViewController" id="dkd-8m-bqq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

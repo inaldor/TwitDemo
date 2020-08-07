@@ -10,9 +10,13 @@ import UIKit
 
 class TweetsDetailsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var accountId: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        print(accountId)
     }
     
     /// MARK: Table View Methods
