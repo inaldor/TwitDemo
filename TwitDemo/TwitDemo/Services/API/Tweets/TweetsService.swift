@@ -14,13 +14,11 @@ struct TweetsService: TweetsServiceProtocol {
     // MARK: Properties
 
     var provider: MoyaProvider<TweetsAPI>
-    //var keychain: KeychainStore
     
     // MARK: Initializers
     
-    init(provider: MoyaProvider<TweetsAPI>/*, keychain: KeychainStore*/) {
+    init(provider: MoyaProvider<TweetsAPI>) {
         self.provider = provider
-        //self.keychain = keychain
     }
     
     // MARK: Imperatives

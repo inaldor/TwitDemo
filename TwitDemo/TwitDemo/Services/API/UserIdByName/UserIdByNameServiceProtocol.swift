@@ -10,20 +10,19 @@
 import Foundation
 
 
-/// Service in charge of fetching the locations of the current LAT/LON from the API server.
+/// Service in charge of fetching the User ID of the username from the API server.
 protocol UserIdByNameServiceProtocol {
 
     // MARK: Properties
 
-    /// Object in charge of requesting the locations from the server.
+    /// Object in charge of requesting the userID from the server.
     var provider: UserIdByNameAPI.Provider { get set }
 
     // MARK: Imperatives
 
-    /// Fetch the locations from the API.
+    /// Fetch the userID from the API.
     /// - Parameters:
-    ///     - Northeast: Lat/Lon of Northeast.
-    ///     - Southwest: Lat/Lon of Southwest.
+    ///     - accountName: Screem name of the account.
     ///     - handler: closure called when the request finishes.
     func fetchUserId(accountName: String,
                         andCompletionHandler handler: @escaping (UserIdByNameAPIResponse?, APIError?) -> Void)

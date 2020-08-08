@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-/// The description of the locations API.
+/// The description of the user_timeline API.
 enum TweetsAPI {
     case tweets(accountID: String)
 }
@@ -28,8 +28,6 @@ extension TweetsAPI: TargetType {
             return "1.1/statuses/user_timeline.json"
         }
     }
-
-    //\(accountId)
     
     var method: Moya.Method {
         switch self {
@@ -41,16 +39,13 @@ extension TweetsAPI: TargetType {
     var task: Task {
         switch self {
         case .tweets(let accountId):
-//            return .requestPlain
-            return .requestParameters(parameters: ["user_id": accountId], encoding: URLEncoding.queryString)
-//            return .requestParameters(parameters: ["first_name": "teste", "last_name": "teste"], encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: ["user_id": accountId, "count": 10], encoding: URLEncoding.queryString)
         }
     }
 
     var sampleData: Data {
         switch self {
         case .tweets:
-            // TODO:
             return "Test".data(using: String.Encoding.utf8)!
         }
     }

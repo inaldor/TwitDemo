@@ -8,9 +8,7 @@
 
 import Foundation
 
-//typealias LocationsAPIResponse = [LocationMapPoint]
-
-/// The codable struct representing the response from the /loadmappointsboxed API endpoint.
+/// The codable struct representing the response from the userIdByName API endpoint.
 struct UserIdByNameAPIResponse: Codable {
     
     // MARK: Properties

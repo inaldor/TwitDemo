@@ -8,21 +8,19 @@
 
 import Foundation
 
-
-/// Service in charge of fetching the locations of the current LAT/LON from the API server.
+/// Service in charge of fetching the tweets of the choosen user from the API server.
 protocol TweetsServiceProtocol {
 
     // MARK: Properties
 
-    /// Object in charge of requesting the locations from the server.
+    /// Object in charge of requesting the tweets from the server.
     var provider: TweetsAPI.Provider { get set }
 
     // MARK: Imperatives
 
-    /// Fetch the locations from the API.
+    /// Fetch the tweets from the API.
     /// - Parameters:
-    ///     - Northeast: Lat/Lon of Northeast.
-    ///     - Southwest: Lat/Lon of Southwest.
+    ///     - AccountId: Id Account of the user.
     ///     - handler: closure called when the request finishes.
     func updateTweets(accountID: String,
                         andCompletionHandler handler: @escaping (TweetsAPIResponse?, APIError?) -> Void)

@@ -10,7 +10,8 @@ import UIKit
 
 /// Cell used to show some info about each item
 class TweetsDetailsCell: UITableViewCell {
- 
     
+    @IBOutlet weak var createdLabel: UILabel!
+    @IBOutlet weak var tweetTextLabel: UILabel!
     
 }

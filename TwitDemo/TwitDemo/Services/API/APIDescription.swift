@@ -14,13 +14,8 @@ enum API {
 
     // MARK: Properties
 
-    /// The api key parameter value used in the network requests.
+    /// The api token parameter value used in the network requests.
     static var token: String = {
-        //let queryResult = try? KeychainStore.shared.read(usingKey: KeychainStore.Keys.apiKey)
-        
-        //guard let apiKey = queryResult as? String else {
-        //    preconditionFailure("The APIKey must be stored.")
-        //}
         
         return "AAAAAAAAAAAAAAAAAAAAAHFEGgEAAAAATU52%2FY4RD%2FH7e91aYdhg9nIqf7g%3Due0jDVnWp96O53VOPEeusGldgwNYKuj1CUwN9n1exuVDWCYA6m"
     }()
@@ -36,7 +31,6 @@ extension TargetType {
 
     // MARK: Default Properties
 
-    // TODO: Make this url environment configurable.
     var baseURL: URL { return URL(string: "https://api.twitter.com")! }
 
     /// Those are the default headers to be sent with all requests.

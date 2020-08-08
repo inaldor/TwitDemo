@@ -86,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				CD9B809A24D984E700A90717 /* Services */,
-				CD14F99024D974CA00F6689A /* Model */,
 				CD14F98F24D974C800F6689A /* View */,
 				CD14F98E24D974C500F6689A /* Controller */,
 				CD14F97424D8A44300F6689A /* AppDelegate.swift */,
@@ -114,13 +113,6 @@
 				CD14F98C24D9743F00F6689A /* TweetsDetailsCell.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		CD14F99024D974CA00F6689A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		CD9B809A24D984E700A90717 /* Services */ = {
